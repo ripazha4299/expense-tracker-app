@@ -5,7 +5,6 @@ export const TransactionForm = () => {
     const [text,setText] = useState('');
     const [amount,setAmount] = useState(0);
     const {addTransaction,maxId} = useContext(GlobalContext);
-    console.log("maxID",maxId)
     const onSubmit = e =>{
         e.preventDefault();
         const newTransaction = {
