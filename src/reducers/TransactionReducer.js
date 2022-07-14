@@ -1,5 +1,5 @@
 var initialState = {
-    transaction: [],
+    transactions: [],
     maxId: 0
 }
 
@@ -17,6 +17,13 @@ const transactionReducer = (state = initialState, action) => {
             ...state,
             transactions: [action.payload,...state.transactions],
             maxId: state.maxId+1
+            }
+        
+        case 'ADD_DUMMY_TXN':
+            return {
+                ...state,
+                transactions: [action.payload],
+                maxId:state.maxId+1
             }
     
         default:

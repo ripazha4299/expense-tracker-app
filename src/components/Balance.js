@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux/es/exports';
 
 
 export const Balance = () => {
-  const {transactions} = useSelector((state) => (state.transactions));
-
+  const transactions = useSelector((state) => (state.transactions));
   var balance = 0;
   transactions.map(transaction => (balance+=transaction.amount))
   balance = balance.toFixed(2)

@@ -10,3 +10,9 @@ export const addTransaction = (transaction) => {
         payload: transaction
     })
 }
+export const addDummyTransaction = (transaction) => {
+    return({
+        type: 'ADD_DUMMY_TXN',
+        payload: transaction
+    })
+}

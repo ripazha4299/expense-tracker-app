@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux/es/exports';
 import { useDispatch } from 'react-redux/es/hooks/useDispatch';
-import { addTransaction } from '../actions';
+import { addDummyTransaction } from '../actions';
 
 export const Header = () => {
   
-  const newTransaction ={
-    id:1,
-    text:'Book',
-    amount:352
-  }
-  const dispatch = useDispatch();
-  console.log(dispatch,newTransaction)
-  dispatch(addTransaction(newTransaction));
-
+  // const transactions = useSelector((state) => (state.transactions));
+  // const newTransaction ={
+  //   id:1,
+  //   text:'Book',
+  //   amount:352
+  // }
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(addDummyTransaction(newTransaction));
+  // });
   return (
     <h2>Expense Tracker</h2>
   )

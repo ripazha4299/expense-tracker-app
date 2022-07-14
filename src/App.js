@@ -23,10 +23,10 @@ function App() {
     <Provider store={store}>
       <Header/>
       <div className="container">
-        {/* <Balance/>
+        <Balance/>
         <IncomeExpense/>
         <History/>
-        <TransactionForm/> */}
+        <TransactionForm/>
       </div>
     </Provider>
     </>
