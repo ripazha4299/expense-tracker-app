@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React from 'react';
+import { useSelector } from 'react-redux/es/exports';
 
 
 export const Balance = () => {
-  const {transactions} = useContext(GlobalContext);
+  const {transactions} = useSelector((state) => (state.transactions));
 
   var balance = 0;
   transactions.map(transaction => (balance+=transaction.amount))

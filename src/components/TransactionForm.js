@@ -1,10 +1,14 @@
-import React, {useContext, useState} from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
+import { addTransaction } from '../actions';
+
 
 export const TransactionForm = () => {
     const [text,setText] = useState('');
     const [amount,setAmount] = useState(0);
-    const {addTransaction,maxId} = useContext(GlobalContext);
+    const maxId = useSelector(state => state.maxId);
+    const dispatch = useDispatch();
     const onSubmit = e =>{
         e.preventDefault();
         const newTransaction = {
@@ -12,7 +16,7 @@ export const TransactionForm = () => {
             text,
             amount: +amount
         }
-        addTransaction(newTransaction);
+        dispatch(addTransaction(newTransaction));
     }
   return (
     <React.Fragment>

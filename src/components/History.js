@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React from 'react';
 import { Transaction } from './Transaction';
+import { useSelector } from 'react-redux/es/exports';
 
 export const History = () => {
-    const {transactions} = useContext(GlobalContext);
+    const {transactions} =  useSelector(state => state.transactions);
 
   return (
     <React.Fragment>

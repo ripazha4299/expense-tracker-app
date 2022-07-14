@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React from 'react';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export const IncomeExpense = () => {
-  const {transactions} = useContext(GlobalContext);
+  const {transactions} = useSelector(state => state.transactions);
   var Income = 0 ,Expense = 0;
   transactions.map(transaction => (transaction.amount>0?Income+=transaction.amount:Expense+=transaction.amount));
   Income = Income.toFixed(2);
